@@ -1,6 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors({
+  origin: true
+}));
+
 app.use(express.json({ limit: "1mb" }));
 
 const PORT = process.env.PORT || 5000;
